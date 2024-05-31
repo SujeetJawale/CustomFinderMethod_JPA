@@ -1,5 +1,6 @@
 package com.sujeet.SpringDataJpa1.dao;
 
+import java.util.Collection;
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -8,5 +9,18 @@ import com.sujeet.SpringDataJpa1.view.ResultView;
 
 public interface IVaccineRepo extends JpaRepository<Vaccine, Integer> 
 {
-    public List<ResultView>findByCostLessThan(Integer cost);
+    //findByProperty
+    public List<Vaccine> findByCost(Integer cost);
+
+    public List<Vaccine> findByVaccineCompany(String companyName);
+
+    //findByPropertykeywords
+    public List<Vaccine> findByVaccineCompanyIs(String companyName);
+    public List<Vaccine> findByVaccineCompanyEquals(String companyName);
+
+    public List<Vaccine> findByCostLessThan(Integer cost);
+    public List<Vaccine> findByCostBetween(Integer startingCost, Integer endingCost);
+    public List<Vaccine> findByVaccineNameInAndCostBetween(Collection<String> vaccines, Integer startingCost, Integer endingCost);
+
+    // public List<ResultView>findByCostLessThan(Integer cost);
 }
