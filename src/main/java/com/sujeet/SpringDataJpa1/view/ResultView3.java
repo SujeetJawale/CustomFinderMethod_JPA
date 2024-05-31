@@ -1,8 +1,7 @@
 package com.sujeet.SpringDataJpa1.view;
 
-public interface ResultView 
+public interface ResultView3 extends View 
 {
 	public String getVaccineName();
-	public String getVaccineCompany();
-
+	public Integer getCost();
 }

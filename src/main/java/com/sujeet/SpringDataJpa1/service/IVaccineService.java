@@ -4,14 +4,16 @@ import java.util.Collection;
 import java.util.List;
 
 import com.sujeet.SpringDataJpa1.dao.Vaccine;
-import com.sujeet.SpringDataJpa1.view.ResultView;
+import com.sujeet.SpringDataJpa1.view.View;
 
 public interface IVaccineService 
 {
-	public List<Vaccine> fetchByCost(Integer cost);
-	public List<Vaccine> fetchByVaccineCompany(String companyName);
-	public List<Vaccine> fetchByCostLessThan(Integer cost);
-	public List<Vaccine> fetchByCostBetween(Integer startingCost, Integer endingCost);
-	public List<Vaccine> fetchByVaccineNameInAndCostBetween(Collection<String> vaccines, Integer startingCost, Integer endingCost);
+//	public List<Vaccine> fetchByCost(Integer cost);
+//	public List<Vaccine> fetchByVaccineCompany(String companyName);
+//	public List<Vaccine> fetchByCostLessThan(Integer cost);
+//	public List<Vaccine> fetchByCostBetween(Integer startingCost, Integer endingCost);
+//	public List<Vaccine> fetchByVaccineNameInAndCostBetween(Collection<String> vaccines, Integer startingCost, Integer endingCost);
 	//public List<ResultView> fetchByCostLessThan(Integer cost);
+
+	public <T extends View>List<T> fetchByCostLessThan(Integer cost, Class<T> cls);
 }
